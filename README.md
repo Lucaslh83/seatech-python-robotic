@@ -10,4 +10,3 @@ Intitulé de l'exercice :
     Mon robot doit pouvoir me donner sa vitesse de déplacement
     Mon robot doit pouvoir arrêter son déplacement sur commande
     Mon robot doit pouvoir me fournir un résumé de son état global
-

@@ -16,8 +16,8 @@ class Robot():
             print("Power is ON")
         elif state == "OFF":
             self.__power = False
-            print("Power is OFF")
             self.stop()
+            print("Power is OFF")
 
     def charge(self):
         self.__charging = True
@@ -39,23 +39,21 @@ class Robot():
 
     def stop(self):
         if self.__speed > 0:
-            print("Robot is stopping")
+            print(self.__name + " is stopping")
         self.__speed = 0
 
     def get_state(self):
         if self.__power == True:
-            print("Nom : " + self.__name)
+            print("State of " + self.__name + " : ")
             print("Power is ON")
             print("Battery = " + str(self.__battery_level) + "%")
             print("Speed = " + str(self.__speed) + "km/h")
 
 
-print("Name of the robot ?")
-r = Robot(str(input()))
+r = Robot(input("Name of the robot ?\n"))
 r.charge()
 r.set_power("ON")
-print("Speed of the robot ?")
-r.set_speed(int(input()))
+r.set_speed(int(input("Speed of the robot ?\n")))
 r.stop()
 r.get_state()
 r.set_power("OFF")
