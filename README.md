@@ -1,4 +1,4 @@
-Intitulé de l'exercice : 
+Intitulé de l'exercice 1 : 
 
     Lorsque je crée mon robot, je veux pouvoir lui attribuer un nom
     Mon robot doit pouvoir s'allumer
@@ -10,3 +10,13 @@ Intitulé de l'exercice :
     Mon robot doit pouvoir me donner sa vitesse de déplacement
     Mon robot doit pouvoir arrêter son déplacement sur commande
     Mon robot doit pouvoir me fournir un résumé de son état global
+
+Intitulé de l'exercice 2 :
+
+    Un Cyborg est un mélange d'humain et de robot
+    Un humain doit posséder un sexe (H / F)
+    Un humain doit pouvoir manger un ou plusieurs aliments
+    Un humain doit pouvoir digérer ce qu'il a mangé
+    Réutiliser la class Robot faite dans l'exo 1
+    Bonus : ajouter une méthode fun au Cyborg
+

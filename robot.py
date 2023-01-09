@@ -50,10 +50,11 @@ class Robot():
             print("Speed = " + str(self.__speed) + "km/h")
 
 
-r = Robot(input("Name of the robot ?\n"))
-r.charge()
-r.set_power("ON")
-r.set_speed(int(input("Speed of the robot ?\n")))
-r.stop()
-r.get_state()
-r.set_power("OFF")
+if __name__ == "main":
+    r = Robot(input("Name of the robot ?\n"))
+    r.charge()
+    r.set_power("ON")
+    r.set_speed(int(input("Speed of the robot ?\n")))
+    r.stop()
+    r.get_state()
+    r.set_power("OFF")
