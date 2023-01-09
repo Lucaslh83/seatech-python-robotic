@@ -22,7 +22,7 @@ class Robot():
     def charge(self):
         self.__charging = True
         while self.__battery_level < 100:
-            time.sleep(0.1)
+            time.sleep(0.01)
             self.__battery_level += 1
             print("Battery = " + str(self.__battery_level) + "%")
         self.__charging = False
@@ -43,11 +43,10 @@ class Robot():
         self.__speed = 0
 
     def get_state(self):
-        if self.__power == True:
-            print("State of " + self.__name + " : ")
-            print("Power is ON")
-            print("Battery = " + str(self.__battery_level) + "%")
-            print("Speed = " + str(self.__speed) + "km/h")
+        print("State of " + self.__name + " : ")
+        print("Power is ON")
+        print("Battery = " + str(self.__battery_level) + "%")
+        print("Speed = " + str(self.__speed) + "km/h")
 
 
 if __name__ == "main":
