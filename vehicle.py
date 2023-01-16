@@ -1,6 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
-class UnmannedVehicule():
+class UnmannedVehicule(metaclass=ABCMeta):
     _name = "DEFAULT"
 
     @abstractmethod
@@ -42,21 +42,21 @@ class UnderseaVehicule():
     def choose_depth(self,depth):
         self._depth = depth
 
-class UGV(UnmannedVehicule,GroundVehicule,metaclass=ABCMeta):
+class UGV(UnmannedVehicule,GroundVehicule):
     def do_something_interesting(self):
         print("RIDE AS FAR AS POSSIBLE")
 
     def status(self):
         print("UGV name is " + self._name + " and its speed is " + str(self._speed) + "m/s")
 
-class UAV(UnmannedVehicule,AerialVehicule,metaclass=ABCMeta):
+class UAV(UnmannedVehicule,AerialVehicule):
     def do_something_interesting(self):
         print("FLY AS HIGH AS YOU CAN")
 
     def status(self):
         print("UAV name is " + self._name + " and its height is " + str(self._height) + "m")
 
-class UUV(UnmannedVehicule,UnderseaVehicule,metaclass=ABCMeta):
+class UUV(UnmannedVehicule,UnderseaVehicule):
     def do_something_interesting(self):
         print("DIVE AS DEEP AS POSSIBLE")
 
