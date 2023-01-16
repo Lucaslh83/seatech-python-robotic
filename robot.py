@@ -49,7 +49,7 @@ class Robot():
         print("Speed = " + str(self.__speed) + "km/h")
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     r = Robot(input("Name of the robot ?\n"))
     r.charge()
     r.set_power("ON")
