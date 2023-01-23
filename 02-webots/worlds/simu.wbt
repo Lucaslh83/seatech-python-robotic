@@ -1,0 +1,95 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "../protos/CircleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/MattePaint.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/toys/protos/RubberDuck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "../protos/Fabtino.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.16361192084530235 0.03905298893067033 -0.9857514917122324 2.617227173131167
+  position 11.149081817525028 2.2584359460230248 5.804550626403206
+}
+TexturedBackground {
+  texture "noon_stormy_empty"
+}
+TexturedBackgroundLight {
+  luminosity 1.5
+}
+RubberDuck {
+  translation 3.95080598650533 3.78381229325156 2.624975274647657
+  rotation 0.00902115114294187 0.11021252599517561 0.9938671027586228 0.42028919648031104
+  name "duck1"
+  scale 7
+}
+RubberDuck {
+  translation -3.741298038651464 -3.6948584797067094 2.628300742582941
+  rotation 0.004987122449654186 -0.008263240170144893 0.9999534226510567 -2.2150938103814104
+  name "duck3"
+  scale 7
+  bodyColor 0.878431 0.105882 0.141176
+}
+RubberDuck {
+  translation -3.726164469515037 3.7477004209657556 2.630455681754004
+  rotation 0.006457302708895595 -0.0017884518755772194 0.9999775520888528 2.403847633537982
+  name "duck4"
+  scale 7
+  bodyColor 0.878431 0.105882 0.141176
+}
+RubberDuck {
+  hidden linearVelocity_0 0.0004472089961887897 -0.0005795688247144724 0.0001115427680049916
+  hidden angularVelocity_0 0.004085952545263994 0.003151252068028997 2.0947781643168543e-05
+  translation 3.775973865257231 -3.697121268112689 2.6284762376411246
+  rotation 0.014831928798857946 -0.0069104984532820345 -0.9998661204877545 0.8291745671721538
+  name "duck2"
+  scale 7
+  bodyColor 0.180392 0.760784 0.494118
+}
+CircleArena {
+  name "defeat arena"
+  radius 8
+  floorAppearance MattePaint {
+    baseColor 0.300008 0.0119936 0.0119936
+  }
+}
+SolidBox {
+  translation 0 0 2
+  rotation 0.707084957913509 0.707084957913509 0.007856499532372323 0
+  name "arena"
+  size 8 8 1
+  appearance PBRAppearance {
+    baseColor 0 0 0
+    baseColorMap ImageTexture {
+    }
+    roughness 0.5
+    metalness 0
+  }
+}
+Fabtino {
+  hidden position_0_0 4.236595510242725e-05
+  hidden position_0_1 -3.30665614339007e-05
+  hidden position_0_2 3.260832395672453e-05
+  hidden position_0_3 -4.1098564321915036e-05
+  hidden linearVelocity_0 -3.105214984810504e-17 -1.203450253273418e-16 -6.123930991937717e-15
+  hidden angularVelocity_0 7.101034485125977e-16 -1.0472066170131106e-15 8.777590548069356e-16
+  hidden rotation_1 0 0.9999999999999999 0 4.236595887430962e-05
+  hidden linearVelocity_1 9.650369867697082e-18 2.256074636194739e-16 3.0153358827105246e-15
+  hidden angularVelocity_1 -1.152957381470184e-15 -6.806734519294672e-16 5.50137786059068e-16
+  hidden rotation_2 0 -1 0 3.3066559734379145e-05
+  hidden linearVelocity_2 -1.039513119282722e-15 3.486801754000891e-16 -4.094175778951871e-15
+  hidden angularVelocity_2 2.2920604831025583e-15 2.6078451638497273e-15 1.694851904379044e-15
+  hidden rotation_3 0 1 0 3.260833058086863e-05
+  hidden linearVelocity_3 9.829017528220928e-16 1.1342834138065443e-17 -5.286124859360561e-15
+  hidden angularVelocity_3 -1.3131093860144286e-16 5.049386238046726e-15 8.061896700921703e-16
+  hidden rotation_4 0 -1 0 4.109856958028748e-05
+  hidden linearVelocity_4 -2.656572668945936e-17 -3.825080636055795e-16 4.918032014542956e-15
+  hidden angularVelocity_4 -3.0302740886525142e-15 -8.069340413410406e-16 2.3815370307774167e-15
+  translation 2.984490005945043 -0.6672950009247661 2.5570768840467264
+  rotation -1.3489993810181374e-08 -1.3480191091373272e-08 0.9999999999999998 1.5704437466700072
+  controller "my_controller"
+  window "<none>"
+}
