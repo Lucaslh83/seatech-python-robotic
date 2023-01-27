@@ -1,8 +1,9 @@
 """my_controller controller."""
 
-from smash import Smash
+from smash import Botter, Stalker
 
-destroyer = Smash()
+destroyer = Botter()
+capt = Stalker()
 timestep = int(destroyer.getBasicTimeStep())
 
 while destroyer.step(timestep) != -1:
