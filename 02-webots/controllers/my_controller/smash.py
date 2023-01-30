@@ -11,6 +11,9 @@ class smash(Robot):
     __sens = True
     __timer = 0
     __waiter = 0
+    __WAIT_TIME = 10
+    __TIMER_TIME = 20
+    __init_sens = False
 
     def __init__(self):
         Robot.__init__(self)
@@ -50,9 +53,20 @@ class smash(Robot):
         self.kinematic([0.0,0.0,-5.0])
 
     def run(self):
-        print(self.__waiter)
+        im1 = self.lidar._lidar1.getRangeImage()[0:540:15]
+        im2 = self.lidar._lidar1.getRangeImage()[0:540:15]
+        compt1 = im1.count(float("inf"))
+        compt2 = im2.count(float("inf"))
+        compt12 = compt1 + compt2
 
-        if self.__waiter == 20:
+        if self.__init_sens == False:
+            if (compt1 <= compt2):
+                self.__sens = True
+            elif (compt2 <= compt1):
+                self.__sens = False
+            self.__init_sens = True
+
+        if self.__waiter == self.__WAIT_TIME:
             if (self.__sens == True):
                 self.forward()
             elif (self.__sens == False):
@@ -61,19 +75,15 @@ class smash(Robot):
             self.stop()
             self.__waiter +=1
 
-        im1 = self.lidar._lidar1.getRangeImage()[0:540:15]
-        im2 = self.lidar._lidar1.getRangeImage()[0:540:15]
-        compt = im1.count(float("inf")) + im2.count(float("inf"))
-
-        if (self.__sens == True and compt > 6 and self.__waiter == 20):
+        if self.__sens == True and compt12 > 60 and self.__waiter == self.__WAIT_TIME and compt2 <= compt1:
             self.__timer += 1
-            if self.__timer == 20:
+            if self.__timer == self.__TIMER_TIME:
                 self.__sens = False
                 self.__timer = 0
                 self.__waiter = 0
-        elif (self.__sens == False and compt > 60 and self.__waiter == 20):
+        elif self.__sens == False and compt12 > 60 and self.__waiter == self.__WAIT_TIME and compt1 <= compt2:
             self.__timer += 1
-            if self.__timer == 20:
+            if self.__timer == self.__TIMER_TIME:
                 self.__sens = True
                 self.__timer = 0
                 self.__waiter = 0
